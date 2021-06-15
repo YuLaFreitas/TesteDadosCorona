@@ -114,11 +114,7 @@ public class MainActivity extends AppCompatActivity
 
             processos.carregarBanco();
         }
-    }
 
-    @Override
-    protected void onStart() {
-        super.onStart();
         pd = new ProgressDialog(this);
         pd.setTitle("Um momento");
         pd.setMessage("Estamos colhendo os dados.");
@@ -126,6 +122,12 @@ public class MainActivity extends AppCompatActivity
         pd.setIndeterminate(true);
         pd.setIcon(android.R.drawable.ic_dialog_info);
         pd.show();
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+
 
     }
 
