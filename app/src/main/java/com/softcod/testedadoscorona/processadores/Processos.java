@@ -76,7 +76,7 @@ public class Processos {
 
         int i = 0;
         int r1 = 0, r2 = 0;
-        int m = 14;
+        int diasSemana = 14;
 
         do{
             saida[i] = "\nEm: " + dia+"/"+mes+"/"+ano +
@@ -90,20 +90,21 @@ public class Processos {
             else{mes -=1;dia = quantosDiasMes(mes, ano);}
         }while (i<14);
 
-        for (;m>=8; m--){r2 += dados[m][0];r1 += dados[m][1]; }
+        for (;diasSemana>=8; diasSemana--){r2 += dados[diasSemana][0];
+            r1 += dados[diasSemana][1]; }
 
         int semOco1 = r1/7;
-
         int semMor1 = r2/7;
 
         int m1 = 0, m2 = 0;
 
-        for (; m<=0; m--){ m1 += dados[m][0]; m2 += dados[m][1]; }
+        for (; diasSemana>=0; diasSemana--){ m1 += dados[diasSemana][0];
+            m2 += dados[diasSemana][1]; }
 
         int semOco2 = m1/7;
         int semMor2 = m2/7;
 
-        int flutuacao =(semOco1-semOco2);
+        int flutuacao =(semOco2-semOco1);
         int obitos =(semMor1-semMor2);
 
         return "Durante a 1ª semana:\n"+
